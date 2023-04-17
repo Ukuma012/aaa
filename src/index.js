@@ -47,6 +47,22 @@ class Game extends React.Component {
     super(props);
     this.state = {
       history: [
+        /* 例えば3手番進んだ時のhistory配列はこうなる
+         * history: [
+         *   {
+         *     squares: [null, null, null, null, null, null, null, null, null]
+         *   },
+         *   {
+         *     squares: [null, null, null, null, 'X', null, null, null, null]
+         *   },
+         *   {
+         *     squares: [null, null, null, null, 'X', null, null, null, 'O']
+         *   },
+         *   {
+         *     squares: [null, null, null, null, 'X', null, 'X', null, 'O']
+         *   }
+         *   ],
+         */
         {
           squares: Array(9).fill(null),
         },
