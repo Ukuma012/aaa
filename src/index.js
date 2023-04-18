@@ -130,7 +130,7 @@ class Game extends React.Component {
 
     let position;
     position =
-      'Position: ' + '(' + poscurrent.pos[0] + ' , ' + poscurrent.pos[1] + ')';
+      'Position: (' + poscurrent.pos[0] + ' , ' + poscurrent.pos[1] + ')';
 
     return (
       <div className='game'>
