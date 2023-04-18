@@ -69,6 +69,8 @@ class Game extends React.Component {
       ],
       stepNumber: 0,
       xIsNext: true,
+      lastRow: -1,
+      lastCol: -1,
     };
   }
 
@@ -76,6 +78,8 @@ class Game extends React.Component {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
+    const col = (i % 3) + 1;
+    const row = Math.floor(i / 3) + 1;
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
@@ -88,6 +92,8 @@ class Game extends React.Component {
       ]),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext,
+      lastRow: row,
+      lastCol: col,
     });
   }
 
@@ -118,6 +124,9 @@ class Game extends React.Component {
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
+
+    let where = '(' + this.state.lastRow + ' , ' + this.state.lastCol + ')';
+
     return (
       <div className='game'>
         <div className='game-board'>
@@ -128,6 +137,7 @@ class Game extends React.Component {
         </div>
         <div className='game-info'>
           <div>{status}</div>
+          <div>{where}</div>
           <ol>{moves}</ol>
         </div>
       </div>
