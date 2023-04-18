@@ -69,8 +69,8 @@ class Game extends React.Component {
       ],
       stepNumber: 0,
       xIsNext: true,
-      lastRow: -1,
-      lastCol: -1,
+      lastRow: 0,
+      lastCol: 0,
     };
   }
 
