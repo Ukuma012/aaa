@@ -49,6 +49,6 @@ ol, ul {
   margin-left: 20px;
 }
 
-.button {
-  background-color: red;
+.highlight {
+  font-weight: bold;
 }
